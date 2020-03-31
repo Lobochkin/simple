@@ -8,12 +8,12 @@ use Bitrix\Main\Page\Asset;
 <head>
     <?php $APPLICATION->ShowHead();?>
     <?php $APPLICATION->ShowTitle();?>
-    <?php Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/bootstrap.min.css');?>
-    <?php Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/business-casual.css');?>
-    <?php Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.js');?>
-    <?php Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/bootstrap.min.js');?>
+    <?php Asset::getInstance()->addCss(DEFAULT_TEMPLATE_PATH . '/css/bootstrap.min.css');?>
+    <?php Asset::getInstance()->addCss(DEFAULT_TEMPLATE_PATH . '/css/business-casual.css');?>
+    <?php Asset::getInstance()->addJs(DEFAULT_TEMPLATE_PATH . '/js/jquery.js');?>
+    <?php Asset::getInstance()->addJs(DEFAULT_TEMPLATE_PATH . '/js/bootstrap.min.js');?>
     <?php Asset::getInstance()->addJs('https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js');?>
-    <?php Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . 'https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js');?>
+    <?php Asset::getInstance()->addJs(DEFAULT_TEMPLATE_PATH . 'https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js');?>
     <?php Asset::getInstance()->addString('<meta http-equiv="X-UA-Compatible" content="IE=edge">');?>
     <?php Asset::getInstance()->addString('<meta name="viewport" content="width=device-width, initial-scale=1">');?>
     <?php Asset::getInstance()->addString('<link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">');?>
@@ -40,7 +40,7 @@ use Bitrix\Main\Page\Asset;
 </head>
 
 <body>
-
+<div id="panel"><?php $APPLICATION->ShowPanel(); ?></div>
 <div class="brand">Business Casual</div>
 <div class="address-bar">3481 Melrose Place | Beverly Hills, CA 90210 | 123.456.7890</div>
 

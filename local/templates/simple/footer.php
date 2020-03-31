@@ -13,10 +13,10 @@
 </footer>
 
 <!-- jQuery -->
-<!--<script src="<?=SITE_TEMPLATE_PATH?>/js/jquery.js"></script>-->
+<!--<script src="<?=DEFAULT_TEMPLATE_PATH?>/js/jquery.js"></script>-->
 
 <!-- Bootstrap Core JavaScript -->
-<!--<script src="<?=SITE_TEMPLATE_PATH?>/js/bootstrap.min.js"></script>-->
+<!--<script src="<?=DEFAULT_TEMPLATE_PATH?>/js/bootstrap.min.js"></script>-->
 
 <!-- Script to Activate the Carousel -->
 <script>
