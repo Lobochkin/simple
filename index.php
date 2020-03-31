@@ -1,5 +1,6 @@
-<?php require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");?>
-<?php dump(SITE_DIR);?>
+<?php require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("title", "Simple_biscuits");
+$APPLICATION->SetTitle("Simple_biscuits");?>
     <div class="row">
         <div class="box">
             <div class="col-lg-12 text-center">
