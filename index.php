@@ -1,80 +1,214 @@
-<?php require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetPageProperty("title", "Simple_biscuits");
-$APPLICATION->SetTitle("Simple_biscuits");?>
-    <div class="row">
-        <div class="box">
-            <div class="col-lg-12 text-center">
-                <div id="carousel-example-generic" class="carousel slide">
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators hidden-xs">
-                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                    </ol>
+<?php require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
+$APPLICATION->SetTitle("Simple biscuits"); ?>
+    <!-- ****** Welcome Post Area Start ****** -->
+    <section class="welcome-post-sliders owl-carousel">
 
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            <img class="img-responsive img-full" src="<?=DEFAULT_TEMPLATE_PATH?>/img/slide-1.jpg" alt="">
-                        </div>
-                        <div class="item">
-                            <img class="img-responsive img-full" src="<?=DEFAULT_TEMPLATE_PATH?>/img/slide-2.jpg" alt="">
-                        </div>
-                        <div class="item">
-                            <img class="img-responsive img-full" src="<?=DEFAULT_TEMPLATE_PATH?>/img/slide-3.jpg" alt="">
+        <!--Single Slide-->
+        <div class="welcome-single-slide">
+            <!--Post Thumb-->
+            <img src="<?=DEFAULT_TEMPLATE_PATH?>/img/bg-img/slide-1.jpg" alt="">
+
+        </div>
+
+        <!--Single Slide-->
+        <div class="welcome-single-slide">
+            <!--Post Thumb-->
+            <img src="<?=DEFAULT_TEMPLATE_PATH?>/img/bg-img/slide-2.jpg" alt="">
+
+        </div>
+
+        <!--Single Slide-->
+        <div class="welcome-single-slide">
+            <!--Post Thumb-->
+            <img src="<?=DEFAULT_TEMPLATE_PATH?>/img/bg-img/slide-3.jpg" alt="">
+
+        </div>
+
+        <!--Single Slide-->
+        <div class="welcome-single-slide">
+            <!--Post Thumb-->
+            <img src="<?=DEFAULT_TEMPLATE_PATH?>/img/bg-img/slide-4.jpg" alt="">
+
+        </div>
+
+        <!--Single Slide-->
+        <div class="welcome-single-slide">
+            <!--Post Thumb-->
+            <img src="<?=DEFAULT_TEMPLATE_PATH?>/img/bg-img/slide-4.jpg" alt="">
+
+        </div>
+
+    </section>
+    <!-- ****** Welcome Area End ****** -->
+
+    <!-- ****** Categories Area Start ****** -->
+    <section class="categories_area clearfix" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single_catagory wow fadeInUp" data - wow - delay=".3s">
+                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/img/catagory-img/1.jpg" alt="">
+                        <div class="catagory-title">
+                            <a href="#">
+                                <h5> Food</h5>
+                            </a>
                         </div>
                     </div>
-
-                    <!-- Controls -->
-                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                        <span class="icon-prev"></span>
-                    </a>
-                    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                        <span class="icon-next"></span>
-                    </a>
                 </div>
-                <h2 class="brand-before">
-                    <small>Welcome to</small>
-                </h2>
-                <h1 class="brand-name">Business Casual</h1>
-                <hr class="tagline-divider">
-                <h2>
-                    <small>By
-                        <strong>Start Bootstrap</strong>
-                    </small>
-                </h2>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single_catagory wow fadeInUp" data - wow - delay=".6s">
+                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/img/catagory-img/2.jpg" alt="">
+                        <div class="catagory-title">
+                            <a href="#">
+                                <h5> Cooking</h5>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single_catagory wow fadeInUp" data - wow - delay=".9s">
+                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/img/catagory-img/3.jpg" alt="">
+                        <div class="catagory-title">
+                            <a href="#">
+                                <h5> Life Style </h5>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+    <!-- ****** Instagram Area Start ****** -->
+    <div class="instargram_area owl-carousel section_padding_100_0 clearfix" id="portfolio">
 
-    <div class="row">
-        <div class="box">
-            <div class="col-lg-12">
-                <hr>
-                <h2 class="intro-text text-center">Build a website
-                    <strong>worth visiting</strong>
-                </h2>
-                <hr>
-                <img class="img-responsive img-border img-left" src="<?=DEFAULT_TEMPLATE_PATH?>/img/intro-pic.jpg" alt="">
-                <hr class="visible-xs">
-                <p>The boxes used in this template are nested inbetween a normal Bootstrap row and the start of your column layout. The boxes will be full-width boxes, so if you want to make them smaller then you will need to customize.</p>
-                <p>A huge thanks to <a href="http://join.deathtothestockphoto.com/" target="_blank">Death to the Stock Photo</a> for allowing us to use the beautiful photos that make this template really come to life. When using this template, make sure your photos are decent. Also make sure that the file size on your photos is kept to a minumum to keep load times to a minimum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+        <!--Instagram Item-->
+        <div class="instagram_gallery_item">
+            <!--Instagram Thumb-->
+            <img src="<?=DEFAULT_TEMPLATE_PATH?>/img/instagram-img/1.jpg" alt="">
+            <!--Hover -->
+            <div class="hover_overlay">
+                <div class="yummy-table">
+                    <div class="yummy-table-cell">
+                        <div class="follow-me text-center">
+                            <a href="#"><i class="fa fa-instagram" aria - hidden="true"></i> Follow me </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="box">
-            <div class="col-lg-12">
-                <hr>
-                <h2 class="intro-text text-center">Beautiful boxes
-                    <strong>to showcase your content</strong>
-                </h2>
-                <hr>
-                <p>Use as many boxes as you like, and put anything you want in them! They are great for just about anything, the sky's the limit!</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+        <!--Instagram Item-->
+        <div class="instagram_gallery_item">
+            <!--Instagram Thumb-->
+            <img src="<?=DEFAULT_TEMPLATE_PATH?>/img/instagram-img/2.jpg" alt="">
+            <!--Hover -->
+            <div class="hover_overlay">
+                <div class="yummy-table">
+                    <div class="yummy-table-cell">
+                        <div class="follow-me text-center">
+                            <a href="#"><i class="fa fa-instagram" aria - hidden="true"></i> Follow me </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <!--Instagram Item-->
+        <div class="instagram_gallery_item">
+            <!--Instagram Thumb-->
+            <img src="<?=DEFAULT_TEMPLATE_PATH?>/img/instagram-img/3.jpg" alt="">
+            <!--Hover -->
+            <div class="hover_overlay">
+                <div class="yummy-table">
+                    <div class="yummy-table-cell">
+                        <div class="follow-me text-center">
+                            <a href="#"><i class="fa fa-instagram" aria - hidden="true"></i> Follow me </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Instagram Item-->
+        <div class="instagram_gallery_item">
+            <!--Instagram Thumb-->
+            <img src="<?=DEFAULT_TEMPLATE_PATH?>/img/instagram-img/4.jpg" alt="">
+            <!--Hover -->
+            <div class="hover_overlay">
+                <div class="yummy-table">
+                    <div class="yummy-table-cell">
+                        <div class="follow-me text-center">
+                            <a href="#"><i class="fa fa-instagram" aria - hidden="true"></i> Follow me </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Instagram Item-->
+        <div class="instagram_gallery_item">
+            <!--Instagram Thumb-->
+            <img src="<?=DEFAULT_TEMPLATE_PATH?>/img/instagram-img/5.jpg" alt="">
+            <!--Hover -->
+            <div class="hover_overlay">
+                <div class="yummy-table">
+                    <div class="yummy-table-cell">
+                        <div class="follow-me text-center">
+                            <a href="#"><i class="fa fa-instagram" aria - hidden="true"></i> Follow me </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Instagram Item-->
+        <div class="instagram_gallery_item">
+            <!--Instagram Thumb-->
+            <img src="<?=DEFAULT_TEMPLATE_PATH?>/img/instagram-img/6.jpg" alt="">
+            <!--Hover -->
+            <div class="hover_overlay">
+                <div class="yummy-table">
+                    <div class="yummy-table-cell">
+                        <div class="follow-me text-center">
+                            <a href="#"><i class="fa fa-instagram" aria - hidden="true"></i> Follow me </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Instagram Item-->
+        <div class="instagram_gallery_item">
+            <!--Instagram Thumb-->
+            <img src="<?=DEFAULT_TEMPLATE_PATH?>/img/instagram-img/1.jpg" alt="">
+            <!--Hover -->
+            <div class="hover_overlay">
+                <div class="yummy-table">
+                    <div class="yummy-table-cell">
+                        <div class="follow-me text-center">
+                            <a href="#"><i class="fa fa-instagram" aria - hidden="true"></i> Follow me </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Instagram Item-->
+        <div class="instagram_gallery_item">
+            <!--Instagram Thumb-->
+            <img src="<?=DEFAULT_TEMPLATE_PATH?>/img/instagram-img/2.jpg" alt="">
+            <!--Hover -->
+            <div class="hover_overlay">
+                <div class="yummy-table">
+                    <div class="yummy-table-cell">
+                        <div class="follow-me text-center">
+                            <a href="#"><i class="fa fa-instagram" aria - hidden="true"></i> Follow me </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
-<?php require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+    <!-- ****** Our Creative Portfolio Area End ****** -->
+<?php require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
