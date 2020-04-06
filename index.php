@@ -40,44 +40,32 @@ $APPLICATION->SetTitle("Simple biscuits"); ?>
 
     </section>
     <!-- ****** Welcome Area End ****** -->
+    <!--****** Categories Area Start ******-->
+<?$APPLICATION->IncludeComponent(
+    "bitrix:catalog.section.list",
+    "list_sections",
+    Array(
+        "ADD_SECTIONS_CHAIN" => "N",
+        "CACHE_FILTER" => "N",
+        "CACHE_GROUPS" => "Y",
+        "CACHE_TIME" => "36000000",
+        "CACHE_TYPE" => "A",
+        "COUNT_ELEMENTS" => "Y",
+        "COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",
+        "FILTER_NAME" => "sectionsFilter",
+        "IBLOCK_ID" => "3",
+        "IBLOCK_TYPE" => "content",
+        "SECTION_CODE" => "",
+        "SECTION_FIELDS" => array("NAME", "PICTURE", "DETAIL_PICTURE", ""),
+        "SECTION_ID" => $_REQUEST["SECTION_ID"],
+        "SECTION_URL" => "#CODE#",
+        "SECTION_USER_FIELDS" => array("UF_URL", ""),
+        "SHOW_PARENT_NAME" => "Y",
+        "TOP_DEPTH" => "2",
+        "VIEW_MODE" => "LINE"
+    )
+);?>
 
-    <!-- ****** Categories Area Start ****** -->
-    <section class="categories_area clearfix" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single_catagory wow fadeInUp" data - wow - delay=".3s">
-                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/img/catagory-img/1.jpg" alt="">
-                        <div class="catagory-title">
-                            <a href="#">
-                                <h5> Food</h5>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single_catagory wow fadeInUp" data - wow - delay=".6s">
-                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/img/catagory-img/2.jpg" alt="">
-                        <div class="catagory-title">
-                            <a href="#">
-                                <h5> Cooking</h5>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single_catagory wow fadeInUp" data - wow - delay=".9s">
-                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/img/catagory-img/3.jpg" alt="">
-                        <div class="catagory-title">
-                            <a href="#">
-                                <h5> Life Style </h5>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <!-- ****** Instagram Area Start ****** -->
     <div class="instargram_area owl-carousel section_padding_100_0 clearfix" id="portfolio">
 
