@@ -10,8 +10,8 @@
                     <div class="single_catagory wow fadeInUp blackout" data-wow-delay=".3s">
                         <img src="<?= $item['PICTURE']['SRC'] ?>" alt="<?=$item['NAME']?>">
                         <div class="catagory-title">
-                            <a href="/<?=$item['SECTION_PAGE_URL']?>/">
-                                <h5><?=$item['NAME']?></h5>
+                            <a href="<?=$item['SECTION_PAGE_URL']?>">
+                                <h5 class="button"><?=$item['NAME']?></h5>
                             </a>
                         </div>
                     </div>
