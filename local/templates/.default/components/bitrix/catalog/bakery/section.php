@@ -12,7 +12,7 @@
 /** @var CBitrixComponent $component */
 use Bitrix\Main\Loader;
 use Bitrix\Main\ModuleManager;
-
+AddMessage2Log('section-bakery');
 $this->setFrameMode(true);
 $this->addExternalCss("/bitrix/css/main/bootstrap.css");
 
@@ -69,12 +69,9 @@ if ($isFilter)
 	if (!isset($arCurSection))
 		$arCurSection = array();
 }
-?>
-<div class="row">
-<?
+
 if ($isVerticalFilter)
 	include($_SERVER["DOCUMENT_ROOT"]."/".$this->GetFolder()."/section_vertical.php");
 else
 	include($_SERVER["DOCUMENT_ROOT"]."/".$this->GetFolder()."/section_horizontal.php");
 ?>
-</div>

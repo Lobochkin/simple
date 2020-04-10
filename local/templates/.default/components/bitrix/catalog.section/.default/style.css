@@ -3,11 +3,20 @@ h4.post-headline {
     text-align: center;
 }
 
-.single-post:hover {
-  border: 1px solid black;
-  border-radius: 30px;
+.single-section:hover {
+    border: 1px solid black;
+    border-radius: 30px;
 }
 
-.single-post:hover .post-headline {
+.single-section:hover .post-headline {
     color: #fc6c3f;
+}
+
+@media (max-width: 992px) {
+    .single-post {
+        margin-bottom: 30px;
+        background-color: seashell;
+        border-radius: 30px;
+        padding-bottom: 5px;
+    }
 }

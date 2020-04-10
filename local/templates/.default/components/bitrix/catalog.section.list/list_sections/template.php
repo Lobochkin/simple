@@ -1,6 +1,8 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     die();
-} ?>
+}
+AddMessage2Log('section.list');
+?>
 
 <section class="categories_area clearfix" id="about">
     <div class="container">

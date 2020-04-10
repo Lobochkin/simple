@@ -178,7 +178,6 @@ if (!empty($arResult['ITEMS']) && !empty($arResult['ITEM_ROWS'])) {
     }
     ?>
     <!-- items-container -->
-
     <section class="archive-area section_padding_80">
         <div class="container">
             <div class="row">
@@ -186,7 +185,7 @@ if (!empty($arResult['ITEMS']) && !empty($arResult['ITEM_ROWS'])) {
                 foreach ($arResult['ITEMS'] as $item) {
                     ?>
                     <div class="col-12 col-md-6 col-lg-4">
-                        <div class="single-post wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="single-post single-section wow fadeInUp" data-wow-delay="0.1s">
                             <!-- Post Thumb -->
                             <div class="post-thumb">
                                 <a href="<?= $item['DETAIL_PAGE_URL'] ?>">

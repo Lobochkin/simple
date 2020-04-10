@@ -1,10 +1,12 @@
 <?
+AddMessage2Log('content-index');
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 //$APPLICATION->SetTitle("Контент");
+
 ?>
 <?$APPLICATION->IncludeComponent(
-	"simple:catalog", 
-	".default", 
+	"bitrix:catalog",
+	"",
 	array(
 		"ACTION_VARIABLE" => "action",
 		"ADD_ELEMENT_CHAIN" => "N",
