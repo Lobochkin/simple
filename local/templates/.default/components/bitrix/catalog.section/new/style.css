@@ -86,5 +86,5 @@
 }
 
 .row::before {
-	display: initial;
+	display: none;
 }

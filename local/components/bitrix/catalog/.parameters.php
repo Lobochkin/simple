@@ -262,7 +262,7 @@ $arComponentParameters = array(
 			),
 
 		),
-		"AJAX_MODE" => array(),
+		//"AJAX_MODE" => array(),
 		"SEF_MODE" => array(
 			"sections" => array(
 				"NAME" => GetMessage("SECTIONS_TOP_PAGE"),

@@ -19,6 +19,18 @@ $APPLICATION->SetPageProperty("title", "Simple_biscuits");
     <?php Asset::getInstance()->addCss(SIMPLE_TEMPLATE_PATH . '/css/responsive/responsive.css'); ?>
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="<?=SITE_TEMPLATE_PATH?>/favicon.ico" />
+
+    <!-- Add mousewheel plugin (this is optional) -->
+    <script type="text/javascript" src="<?=SIMPLE_TEMPLATE_PATH?>/fancybox/lib/jquery.mousewheel.pack.js"></script>
+    <!-- Add fancyBox -->
+    <?php Asset::getInstance()->addCss(SIMPLE_TEMPLATE_PATH . '/fancybox/source/jquery.fancybox.css?v=2.1.7'); ?>
+    <script type="text/javascript" src="<?=SIMPLE_TEMPLATE_PATH?>/fancybox/source/jquery.fancybox.pack.js?v=2.1.7"></script>
+    <!-- Optionally add helpers - button, thumbnail and/or media -->
+    <?php Asset::getInstance()->addCss(SIMPLE_TEMPLATE_PATH . '/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5'); ?>
+    <script type="text/javascript" src="<?=SIMPLE_TEMPLATE_PATH?>/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+    <script type="text/javascript" src="<?=SIMPLE_TEMPLATE_PATH?>/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+    <?php Asset::getInstance()->addCss(SIMPLE_TEMPLATE_PATH . '/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7'); ?>
+    <script type="text/javascript" src="<?=SIMPLE_TEMPLATE_PATH?>/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
 </head>
 
 
@@ -84,7 +96,6 @@ $APPLICATION->SetPageProperty("title", "Simple_biscuits");
                 </div>
             </div>
         </div>
-
         <div class="row">
             <div class="col-12">
                 <nav class="navbar navbar-expand-lg">
@@ -115,3 +126,29 @@ $APPLICATION->SetPageProperty("title", "Simple_biscuits");
         </div>
     </div>
 </header>
+<?php if ($APPLICATION->GetCurPage() !== '/'): ?>
+<?$APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array(
+        "START_FROM" => "0",
+        "PATH" => "",
+        "SITE_ID" => "s1"
+    )
+);?>
+<? endif;?>
+<script>
+    $(document).ready(function() {
+        $(".fancybox-thumb").fancybox({
+            prevEffect	: 'none',
+            nextEffect	: 'none',
+            helpers	: {
+                title	: {
+                    type: 'outside'
+                },
+                thumbs	: {
+                    width	: 50,
+                    height	: 50
+                }
+            }
+        });
+    });
+</script>
+

@@ -16,9 +16,9 @@ use \Bitrix\Main\Localization\Loc;
  */
 
 $this->setFrameMode(true);
-
+//dump($arResult);
 ?>
-<section class="single_blog_area section_padding_80">
+<section class="single_blog_area section_padding_30">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-8">
@@ -29,11 +29,23 @@ $this->setFrameMode(true);
                             <!-- Post Thumb -->
                             <div class="post-thumb">
                                 <img src="<?= $arResult['DETAIL_PICTURE']['SRC'] ?>" alt="<?= $arResult['DETAIL_PICTURE']['ALT'] ?>">
+                                <div class="wrapper"?>
+                                <?php
+                                $arImage = [];
+                                foreach ($arResult["DISPLAY_PROPERTIES"]["PHOTOS"]["FILE_VALUE"] as $idImg):?>
+
+                                    <a class="fancybox-thumb" rel="fancybox-thumb" href="http://lobochkin.ru<?=$idImg['SRC']?>" title="">
+                                        <img class="photo-prev" src="http://lobochkin.ru<?=$idImg['SRC']?>" alt=""  width="100"/>
+                                    </a>
+<!--                                    <img src="--><?//= CFile::GetFileArray($idImg)['SRC']?><!--" width="100" alt="Фотография торта"/>-->
+                                <? endforeach; ?>
+                                </div>
                             </div>
                             <!-- Post Content -->
                             <div class="post-content">
                                 <h2 class="post-headline"><?= $arResult['NAME'] ?></h2>
                                 <p><?= $arResult['DETAIL_TEXT'] ?></p>
+                                <span class="price">Цена: <?=$arResult['PROPERTIES']['PRICE']['VALUE']?></span>
                             </div>
                         </div>
                     </div>

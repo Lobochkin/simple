@@ -4,7 +4,7 @@
 AddMessage2Log('section.list');
 ?>
 
-<section class="categories_area clearfix" id="about">
+<section class="categories_area" id="about">
     <div class="container">
         <div class="row">
             <?php foreach ($arResult['SECTIONS'] as $item): ?>

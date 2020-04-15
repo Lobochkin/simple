@@ -1,0 +1,12 @@
+.breadcrumb-item {
+	font-weight: 500;
+	font-size: 17px;
+	font-family: Poppins, sans-serif;
+	display: list-item;
+	line-height: 25px;
+}
+.breadcrumb-item.active {
+	font-weight: 400;
+	color: rgb(134, 142, 150);
+
+}

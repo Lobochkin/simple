@@ -40,39 +40,30 @@ use Bitrix\Main\Page\Asset;
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="footer-content">
-                    <!-- Logo Area Start -->
-                    <div class="footer-logo-area text-center">
-                        <a href="/" class="yummy-logo">Simple biscuits</a>
-                    </div>
+                <nav class="navbar navbar-expand-lg">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#yummyfood-nav"
+                            aria-controls="yummyfood-nav" aria-expanded="false" aria-label="Toggle navigation"><i
+                                class="fa fa-bars" aria-hidden="true"></i> Menu
+                    </button>
                     <!-- Menu Area Start -->
-                    <nav class="navbar navbar-expand-lg">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#yummyfood-footer-nav" aria-controls="yummyfood-footer-nav" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars" aria-hidden="true"></i> Menu</button>
-                        <!-- Menu Area Start -->
-                        <div class="collapse navbar-collapse justify-content-center" id="yummyfood-footer-nav">
-                            <ul class="navbar-nav">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Features</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Categories</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Archive</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">About</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Contact</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
+                    <?$APPLICATION->IncludeComponent(
+                        "bitrix:menu",
+                        "horizontal_menu_first_level",
+                        Array(
+                            "ALLOW_MULTI_SELECT" => "N",
+                            "CHILD_MENU_TYPE" => "left",
+                            "DELAY" => "N",
+                            "MAX_LEVEL" => "1",
+                            "MENU_CACHE_GET_VARS" => array(""),
+                            "MENU_CACHE_TIME" => "3600",
+                            "MENU_CACHE_TYPE" => "A",
+                            "MENU_CACHE_USE_GROUPS" => "Y",
+                            "ROOT_MENU_TYPE" => "main",
+                            "USE_EXT" => "Y"
+                        )
+                    );?>
+
+                </nav>
             </div>
         </div>
     </div>
@@ -82,7 +73,7 @@ use Bitrix\Main\Page\Asset;
             <div class="col-12">
                 <!-- Copywrite Text -->
                 <div class="copy_right_text text-center">
-                    <p>Copyright @2018 All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+                    <p>Copyright @2020 All rights reserved <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="/" target="_blank">Lobochkin</a></p>
                 </div>
             </div>
         </div>
