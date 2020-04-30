@@ -48,6 +48,13 @@ $aMenuLinks = Array(
 		Array(), 
 		Array(), 
 		"" 
+	),
+	Array(
+		"Счетчик", 
+		"/schetchik/index.php", 
+		Array(), 
+		Array(), 
+		"CSite::InGroup(array(1,6))" 
 	)
 );
 ?>

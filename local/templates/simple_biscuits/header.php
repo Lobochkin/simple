@@ -17,6 +17,7 @@ $APPLICATION->SetPageProperty("title", "Simple_biscuits");
     <?php Asset::getInstance()->addString('<meta name="viewport" content="width=device-width, initial-scale=1">'); ?>
     <?php Asset::getInstance()->addCss(SIMPLE_TEMPLATE_PATH . '/style.css'); ?>
     <?php Asset::getInstance()->addCss(SIMPLE_TEMPLATE_PATH . '/css/responsive/responsive.css'); ?>
+    <script src="<?= SITE_TEMPLATE_PATH . '/js/axios.min.js' ?>"></script>
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="<?=SITE_TEMPLATE_PATH?>/favicon.ico" />
 
