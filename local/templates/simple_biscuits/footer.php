@@ -90,6 +90,7 @@ use Bitrix\Main\Page\Asset;
 <!-- Active JS -->
 <script src="<?=SIMPLE_TEMPLATE_PATH?>/js/active.js"></script>
 
+<?php Asset::getInstance()->addJs(SIMPLE_TEMPLATE_PATH . '/js/vue.js'); ?>
 </body>
 
 </html>
