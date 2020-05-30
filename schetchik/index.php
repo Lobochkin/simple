@@ -1,30 +1,12 @@
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php"); ?>
 <?php
-Bitrix\Main\Page\Asset::getInstance()->addString("<link href=\"/schetchik/css/style.css\" type=\"text/css\" rel=\"stylesheet\">");
-$host = '127.0.0.1';
-$db = 'meters';
-$user = 'root';
-$pass = '9266079409VaL5';
-$charset = 'utf8';
+$db = new \PDO\DB();
 
-$dsn = "mysql:default_socket=/var/lib/mysqld/mysqld.sock;dbname=$db;charset=$charset";
-$opt = [
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES => false,
-];
-$pdo = new PDO($dsn, $user, $pass, $opt);
-
-$stmt = $pdo->query("SELECT * FROM meters ORDER BY id DESC");
-$data = [];
-while ($row = $stmt->fetch()) {
-    $data[] = $row;
-}
+$data = $db::getRows("SELECT * FROM meters ORDER BY id DESC");
 $data = array_reverse($data);
+$price = $db::getRow("SELECT * FROM price ORDER BY id DESC LIMIT 1");
 
-$stmt = $pdo->query("SELECT * FROM price ORDER BY id DESC LIMIT 1");
-$price = $stmt->fetch();
-
+Bitrix\Main\Page\Asset::getInstance()->addString("<link href=\"/schetchik/css/style.css\" type=\"text/css\" rel=\"stylesheet\">");
 ?>
 
 <div class="container">

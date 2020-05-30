@@ -55,6 +55,13 @@ $aMenuLinks = Array(
 		Array(), 
 		Array(), 
 		"CSite::InGroup(array(1,6))" 
+	),
+	Array(
+		"Подкинуть манетку", 
+		"/heads_and_tails/", 
+		Array(), 
+		Array(), 
+		"CSite::InGroup(array(1,6))" 
 	)
 );
 ?>

@@ -107,7 +107,10 @@ function add_date(id) {
     axios.post('/local/tools/ajax.php', formData).then(function(res) {
         document.querySelector('.table-count').innerHTML = res.data;
         document.querySelector('[name="button_edit"][data-id="' + id + '"]').innerHTML = '<i class="fa fa-edit" style="color: blue;">&#10004;</i>';
+        let color = $('tr [data-id="' + id + '"]').closest('tr').css("background-color");
+        $('tr [data-id="' + id + '"]').closest('tr').css("background-color","blueviolet");
         setTimeout(function() {
+            $('tr [data-id="' + id + '"]').closest('tr').css("background-color",color);
             document.querySelector('[name="button_edit"][data-id="' + id + '"]').innerHTML = '<i class="fa fa-edit"></i>';
         }, 3000);
     }).catch(function(err) {
