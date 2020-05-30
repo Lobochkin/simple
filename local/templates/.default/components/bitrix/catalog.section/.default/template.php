@@ -170,23 +170,22 @@ if ($arParams['HIDE_SECTION_DESCRIPTION'] !== 'Y') {
 if (!empty($arResult['ITEMS']) && !empty($arResult['ITEM_ROWS'])) {
     $areaIds = array();
 
-    foreach ($arResult['ITEMS'] as $item) {
+/*    foreach ($arResult['ITEMS'] as $item) {
         $uniqueId = $item['ID'] . '_' . md5($this->randString() . $component->getAction());
         $areaIds[$item['ID']] = $this->GetEditAreaId($uniqueId);
         $this->AddEditAction($uniqueId, $item['EDIT_LINK'], $elementEdit);
         $this->AddDeleteAction($uniqueId, $item['DELETE_LINK'], $elementDelete, $elementDeleteParams);
-    }
+    }*/
     ?>
     <!-- items-container -->
-
-    <section class="archive-area section_padding_80">
+    <section class="archive-area section_padding_30">
         <div class="container">
             <div class="row">
                 <?
                 foreach ($arResult['ITEMS'] as $item) {
                     ?>
                     <div class="col-12 col-md-6 col-lg-4">
-                        <div class="single-post wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="single-post single-section wow fadeInUp" data-wow-delay="0.1s">
                             <!-- Post Thumb -->
                             <div class="post-thumb">
                                 <a href="<?= $item['DETAIL_PAGE_URL'] ?>">
@@ -235,6 +234,7 @@ if ($showBottomPager) {
 $signer = new \Bitrix\Main\Security\Sign\Signer;
 $signedTemplate = $signer->sign($templateName, 'catalog.section');
 $signedParams = $signer->sign(base64_encode(serialize($arResult['ORIGINAL_PARAMETERS'])), 'catalog.section');
+
 ?>
 <script>
     BX.message({
@@ -259,8 +259,7 @@ $signedParams = $signer->sign(base64_encode(serialize($arResult['ORIGINAL_PARAME
         BTN_MESSAGE_LAZY_LOAD_WAITER: '<?=GetMessageJS('CT_BCS_CATALOG_BTN_MESSAGE_LAZY_LOAD_WAITER')?>',
         SITE_ID: '<?=CUtil::JSEscape($component->getSiteId())?>'
     });
-    var <?=$obName?> =;
-    new JCCatalogSectionComponent({
+    /*var <?=$obName?> = new JCCatalogSectionComponent({
         siteId: '<?=CUtil::JSEscape($component->getSiteId())?>',
         componentPath: '<?=CUtil::JSEscape($componentPath)?>',
         navParams: <?=CUtil::PhpToJSObject($navParams)?>,
@@ -273,6 +272,6 @@ $signedParams = $signer->sign(base64_encode(serialize($arResult['ORIGINAL_PARAME
         ajaxId: '<?=CUtil::JSEscape($arParams['AJAX_ID'])?>',
         parameters: '<?=CUtil::JSEscape($signedParams)?>',
         container: '<?=$containerName?>'
-    });
+    });*/
 </script>
 <!-- component-end -->

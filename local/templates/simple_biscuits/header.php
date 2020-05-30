@@ -17,8 +17,21 @@ $APPLICATION->SetPageProperty("title", "Simple_biscuits");
     <?php Asset::getInstance()->addString('<meta name="viewport" content="width=device-width, initial-scale=1">'); ?>
     <?php Asset::getInstance()->addCss(SIMPLE_TEMPLATE_PATH . '/style.css'); ?>
     <?php Asset::getInstance()->addCss(SIMPLE_TEMPLATE_PATH . '/css/responsive/responsive.css'); ?>
+    <script src="<?= SITE_TEMPLATE_PATH . '/js/axios.min.js' ?>"></script>
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="<?=SITE_TEMPLATE_PATH?>/favicon.ico" />
+
+    <!-- Add mousewheel plugin (this is optional) -->
+    <script type="text/javascript" src="<?=SIMPLE_TEMPLATE_PATH?>/fancybox/lib/jquery.mousewheel.pack.js"></script>
+    <!-- Add fancyBox -->
+    <?php Asset::getInstance()->addCss(SIMPLE_TEMPLATE_PATH . '/fancybox/source/jquery.fancybox.css?v=2.1.7'); ?>
+    <script type="text/javascript" src="<?=SIMPLE_TEMPLATE_PATH?>/fancybox/source/jquery.fancybox.pack.js?v=2.1.7"></script>
+    <!-- Optionally add helpers - button, thumbnail and/or media -->
+    <?php Asset::getInstance()->addCss(SIMPLE_TEMPLATE_PATH . '/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5'); ?>
+    <script type="text/javascript" src="<?=SIMPLE_TEMPLATE_PATH?>/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+    <script type="text/javascript" src="<?=SIMPLE_TEMPLATE_PATH?>/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+    <?php Asset::getInstance()->addCss(SIMPLE_TEMPLATE_PATH . '/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7'); ?>
+    <script type="text/javascript" src="<?=SIMPLE_TEMPLATE_PATH?>/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
 </head>
 
 
@@ -36,11 +49,7 @@ $APPLICATION->SetPageProperty("title", "Simple_biscuits");
             <div class="col-5 col-sm-6">
                 <!--  Top Social bar start -->
                 <div class="top_social_bar">
-                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/simple_biscuits/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                 </div>
             </div>
             <!--  Login Register Area -->
@@ -84,7 +93,6 @@ $APPLICATION->SetPageProperty("title", "Simple_biscuits");
                 </div>
             </div>
         </div>
-
         <div class="row">
             <div class="col-12">
                 <nav class="navbar navbar-expand-lg">
@@ -115,3 +123,29 @@ $APPLICATION->SetPageProperty("title", "Simple_biscuits");
         </div>
     </div>
 </header>
+<?php if ($APPLICATION->GetCurPage() !== '/'): ?>
+<?$APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array(
+        "START_FROM" => "0",
+        "PATH" => "",
+        "SITE_ID" => "s1"
+    )
+);?>
+<? endif;?>
+<script>
+    $(document).ready(function() {
+        $(".fancybox-thumb").fancybox({
+            prevEffect	: 'none',
+            nextEffect	: 'none',
+            helpers	: {
+                title	: {
+                    type: 'outside'
+                },
+                thumbs	: {
+                    width	: 50,
+                    height	: 50
+                }
+            }
+        });
+    });
+</script>
+

@@ -17,6 +17,10 @@ class ComposerStaticInitbb50bb3fd2a287a2cf2b3174039f99d8
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\VarDumper\\' => 28,
         ),
+        'P' => 
+        array (
+            'PDO\\' => 4,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -28,6 +32,14 @@ class ComposerStaticInitbb50bb3fd2a287a2cf2b3174039f99d8
         array (
             0 => __DIR__ . '/..' . '/symfony/var-dumper',
         ),
+        'PDO\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/local/php_interface/classes',
+        ),
+    );
+
+    public static $classMap = array (
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
@@ -35,6 +47,7 @@ class ComposerStaticInitbb50bb3fd2a287a2cf2b3174039f99d8
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitbb50bb3fd2a287a2cf2b3174039f99d8::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitbb50bb3fd2a287a2cf2b3174039f99d8::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitbb50bb3fd2a287a2cf2b3174039f99d8::$classMap;
 
         }, null, ClassLoader::class);
     }

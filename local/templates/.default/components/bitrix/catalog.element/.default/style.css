@@ -1,0 +1,14 @@
+.price {
+    color: rgb(35, 45, 55);
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: underline;
+}
+.photo-prev {
+    border-radius: 14px;
+    border: 1px solid black;
+}
+.wrapper {
+    display: flex;
+    justify-content: space-around;
+}

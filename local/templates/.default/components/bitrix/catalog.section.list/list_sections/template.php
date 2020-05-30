@@ -1,8 +1,10 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     die();
-} ?>
+}
+AddMessage2Log('section.list');
+?>
 
-<section class="categories_area clearfix" id="about">
+<section class="categories_area" id="about">
     <div class="container">
         <div class="row">
             <?php foreach ($arResult['SECTIONS'] as $item): ?>

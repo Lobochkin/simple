@@ -15,7 +15,7 @@
 $this->setFrameMode(true);
 
 ?>
-<section class="archive-area section_padding_80">
+<section class="archive-area section_padding_30">
     <div class="container">
         <div class="row">
             <? if ($arParams["DISPLAY_TOP_PAGER"]): ?>
