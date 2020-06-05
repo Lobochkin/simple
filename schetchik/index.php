@@ -10,6 +10,9 @@ Bitrix\Main\Page\Asset::getInstance()->addString("<link href=\"/schetchik/css/st
 ?>
 
 <div class="container">
+    <?php if ($USER->IsAdmin()) :?>
+    <div class="is-admin" hidden>__admin</div>
+    <?php endif;?>
     <p>
     <h2>Тариф</h2>
     <div class="price_water">Расход воды: <b><?= $price['water'] ?></b></div>
@@ -127,7 +130,7 @@ Bitrix\Main\Page\Asset::getInstance()->addString("<link href=\"/schetchik/css/st
 </div>
 <script src="/schetchik/js/script.js"></script>
 
-<div id="app" style="display: none">
+<!--<div id="app" style="display: none">
 
     <br>
     <span v-if="seen">Сейчас меня видно</span>
@@ -150,6 +153,6 @@ Bitrix\Main\Page\Asset::getInstance()->addString("<link href=\"/schetchik/css/st
             ]
         }
     });
-</script>
+</script>-->
 
 <?php require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

@@ -2,6 +2,7 @@
 var price_water = +document.querySelector('.price_water b').innerText;
 var price_warming = +document.querySelector('.price_warming b').innerText;
 var price_electric = +document.querySelector('.price_electric b').innerText;
+var admin = document.querySelector('.is-admin')? document.querySelector('.is-admin').innerHTML:'';
 
 function calculate() {
     event.preventDefault();
@@ -30,6 +31,7 @@ function calculate() {
 
 document.querySelector('.form__button_add').onclick = function() {
     event.preventDefault();
+
     let total = document.querySelector('.total');
 
     if (total.innerText.length < 1) {
@@ -85,6 +87,10 @@ function calculate_edit(id, idOld) {
 }
 
 function add_date(id) {
+    if (admin == '') {
+        alert('Только администратор имеет право на редактирование!');
+        return false;
+    }
     $('[name="button"][data-id="' + id + '"]').trigger('click');
     let dataDate = document.querySelector('[name="date"][data-id="' + id + '"]').value;
     let dataElectric = document.querySelector('[name="electric"][data-id="' + id + '"]').value;
@@ -97,7 +103,7 @@ function add_date(id) {
         return false;
     }
     var formData = new FormData();
-    formData.append(0, 'action-edit');
+    formData.append(0, 'action-edit' + admin);
     formData.append(1, dataDate);
     formData.append(2, dataElectric);
     formData.append(3, dataHotWater);
@@ -119,9 +125,13 @@ function add_date(id) {
 }
 
 function dataDelete(id) {
+    if (admin == '') {
+        alert('Только администратор имеет право на удаление!');
+        return false;
+    }
     if (confirm('Вы уверены что хотите удалить показания за день?')) {
         var formData = new FormData();
-        formData.append(0, 'action-delete');
+        formData.append(0, 'action-delete' + admin);
         formData.append(1, id);
         axios.post('/local/tools/ajax.php', formData).then(function(res) {
             document.querySelector('.table-count').innerHTML = res.data;

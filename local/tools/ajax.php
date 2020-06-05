@@ -17,7 +17,7 @@ switch ($request->get('0')) {
         $db::sql($query, $args);
 
         break;
-    case 'action-edit':
+    case 'action-edit__admin':
         $query = "UPDATE meters SET date=:date, electric=:electric, hot_water=:hot_water, cold_water=:cold_water, total=:total WHERE id=:id";
         $args = [
             'date' => $request->get('1'),
@@ -29,7 +29,7 @@ switch ($request->get('0')) {
         ];
         $db::sql($query, $args);
         break;
-    case 'action-delete':
+    case 'action-delete__admin':
         $db::sql("DELETE FROM `meters` WHERE `id` = ?", [$request->get('1')]);
         break;
 }

@@ -1,6 +1,6 @@
 <?
-$PERM["schetchik"]["*"]="D";
-$PERM["schetchik"]["6"]="X";
+$PERM["schetchik"]["*"]="W";
+$PERM["schetchik"]["G6"]="X";
 $PERM["search"]["6"]="W";
 $PERM["services"]["6"]="W";
 $PERM["news"]["6"]="W";
