@@ -2,39 +2,62 @@
 
 $request = Bitrix\Main\Context::getCurrent()->getRequest();
 $db = new \PDO\DB();
-switch ($request->get('0')) {
-    case 'action-add':
+
+switch ($request->get('action')) {
+    case 'add':
         $query = "INSERT INTO meters (date, electric, hot_water, cold_water, total) VALUES (:date, :electric, :hot_water, :cold_water, :total)";
 
         $args = [
-            'date' => $request->get('1'),
-            'electric' => $request->get('2'),
-            'hot_water' => $request->get('3'),
-            'cold_water' => $request->get('4'),
-            'total' => $request->get('5'),
+            'date' => $request->get('date'),
+            'electric' => $request->get('electric'),
+            'hot_water' => $request->get('hot_water'),
+            'cold_water' => $request->get('cold_water'),
+            'total' => $request->get('total'),
         ];
 
         $db::sql($query, $args);
 
+        break;
+    case 'delete_Admin':
+        $db::sql("DELETE FROM `meters` WHERE `id` = ?", [$request->get('id')]);
         break;
     case 'action-edit__admin':
         $query = "UPDATE meters SET date=:date, electric=:electric, hot_water=:hot_water, cold_water=:cold_water, total=:total WHERE id=:id";
         $args = [
-            'date' => $request->get('1'),
-            'electric' => $request->get('2'),
-            'hot_water' => $request->get('3'),
-            'cold_water' => $request->get('4'),
-            'total' => $request->get('5'),
-            'id' => $request->get('6')
+            'date' => $request->get('date'),
+            'electric' => $request->get('electric'),
+            'hot_water' => $request->get('hot_water'),
+            'cold_water' => $request->get('cold_water'),
+            'total' => $request->get('total'),
+            'id' => $request->get('id')
         ];
+
         $db::sql($query, $args);
         break;
-    case 'action-delete__admin':
-        $db::sql("DELETE FROM `meters` WHERE `id` = ?", [$request->get('1')]);
-        break;
+
+    default:
+        if ($strCount = $request->get('price')){
+            $price = $db::getRow("SELECT * FROM price ORDER BY id DESC LIMIT " . $strCount );
+            echo json_encode($price);
+            die();
+        }
 }
 $data = $db::getRows("SELECT * FROM meters ORDER BY id DESC LIMIT 3");
 $data = array_reverse($data);
+echo json_encode($data);
+die();
+
+
+
+
+
+
+
+
+
+
+
+
 
 $formString = '';
 foreach ($data as $key => $item) {

@@ -14,7 +14,7 @@
 
 use Bitrix\Main\Loader;
 use Bitrix\Main\ModuleManager;
-AddMessage2Log('element-templ');
+
 $this->setFrameMode(true);
 $this->addExternalCss('/bitrix/css/main/bootstrap.css');
 

@@ -12,7 +12,7 @@
 /** @var CBitrixComponent $component */
 use Bitrix\Main\Loader;
 use Bitrix\Main\ModuleManager;
-AddMessage2Log('section-bakery');
+
 $this->setFrameMode(true);
 $this->addExternalCss("/bitrix/css/main/bootstrap.css");
 

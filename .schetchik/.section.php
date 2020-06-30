@@ -1,0 +1,6 @@
+<?
+$sSectionName = "Счетчик";
+$arDirProperties = Array(
+
+);
+?>
