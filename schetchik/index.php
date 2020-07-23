@@ -1,18 +1,10 @@
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php"); ?>
 <?php
-$db = new \PDO\DB();
-
-$data = $db::getRows("SELECT * FROM meters ORDER BY id DESC");
-$data = array_reverse($data);
-$price = $db::getRow("SELECT * FROM price ORDER BY id DESC LIMIT 1");
 
 Bitrix\Main\Page\Asset::getInstance()->addString("<link href=\"/schetchik/css/style.css\" type=\"text/css\" rel=\"stylesheet\">");
 ?>
 
 <div class="container" id="app">
-    <?php if ($USER->IsAdmin()) : ?>
-        <div class="is-admin" hidden>__admin</div>
-    <?php endif; ?>
     <p>
     <h2>Тариф</h2>
     <div class="price_water">Расход воды: <b>{{price.water}}</b></div>
