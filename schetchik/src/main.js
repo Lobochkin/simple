@@ -1,9 +1,11 @@
 
 import Vue from 'vue'
 import App from './App.vue'
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import { BootstrapVue, IconsPlugin,FormDatepickerPlugin } from 'bootstrap-vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+
+Vue.use(FormDatepickerPlugin)
 // Install axios
 Vue.use(VueAxios, axios)
 // Install BootstrapVue

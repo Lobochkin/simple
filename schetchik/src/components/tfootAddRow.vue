@@ -2,7 +2,18 @@
     <tfoot>
     <tr>
         <td class="p-sm-3">
-            <input class="form__input form__input-date" type="date" name="date" v-model="addMeters.date" autofocus>
+            <b-datepicker
+                    placeholder="Выберите дату"
+                    size="sm"
+                    today-button
+                    reset-button
+                    close-button
+                    v-model="addMeters.date"
+                    :date-format-options="{ year: 'numeric', month: 'numeric', day: 'numeric' }"
+                    :start-weekday="1"
+                    autofocus>
+            </b-datepicker>
+<!--            <input class="form__input form__input-date" type="date" name="date" v-model="addMeters.date" autofocus>-->
         </td>
         <td class="p-sm-3">
             <input class="form__input form__input-electric" type="number" name="electric" v-model="addMeters.electric" maxlength="30" required>
@@ -42,6 +53,10 @@
                 }
             };
         },
+        created() {
+            this.addMeters.date = new Date();
+        }
+        ,
         watch: {
             meters: function() {
                 this.addMeters = {
@@ -86,6 +101,11 @@
     };
 </script>
 
-<style scoped>
-
+<style >
+ /*   .b-form-btn-label-control.form-control > .btn {
+        padding: 0 6px 0 0;
+    }
+    .b-form-btn-label-control.form-control > label.form-control-sm {
+        padding: 0;
+    }*/
 </style>

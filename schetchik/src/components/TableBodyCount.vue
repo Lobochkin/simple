@@ -2,7 +2,19 @@
     <tbody class="table-count">
         <tr v-for="(meter, index) in meters" :key="index" :class="[(typeof meter.isUpdate === 'undefined' )?'': meter.isUpdate == 'true'?'update':'']">
             <td class="p-sm-3">
-                <input class="form__input" type="date" name="date" data-id="" v-model="meter.date" required>
+<!--                <input class="form__input" type="date" name="date" data-id="" v-model="meter.date" required>-->
+                <b-datepicker
+                        name="date"
+                        size="sm"
+                        autocomplete="on"
+                        today-button
+                        reset-button
+                        close-button
+                        v-model="meter.date"
+                        :date-format-options="{ year: 'numeric', month: 'numeric', day: 'numeric' }"
+                        :start-weekday="1"
+                        autofocus>
+                </b-datepicker>
             </td>
             <td class="p-sm-3">
                 <input class="form__input" type="number" name="electric" data-id="" v-model="meter.electric" maxlength="30" required>
@@ -97,6 +109,31 @@
 
 </script>
 
-<style scoped>
+<style>
+    .b-calendar-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn.border-0.rounded-circle.text-nowrap.btn-outline-light {
+        font-size: 0.75rem;
+    }
+    label.form-control {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        border: none;
+        color: rgb(0, 0, 0)!important;
+    }
+    div.b-form-btn-label-control {
+        background-color: inherit;
+        border: none;
+    }
+    .b-calendar-grid-body>.row {
+        flex-wrap: nowrap;
+    }
+    .b-calendar-grid-body .row .btn {
+        padding: 5px;
+    }
 
 </style>
