@@ -122,12 +122,15 @@
         display: flex;
         align-items: center;
         margin: 0;
+        padding: 0;
         border: none;
         color: rgb(0, 0, 0)!important;
+        font-size: 17px;
     }
     div.b-form-btn-label-control {
         background-color: inherit;
         border: none;
+        padding: 0;
     }
     .b-calendar-grid-body>.row {
         flex-wrap: nowrap;
@@ -135,5 +138,9 @@
     .b-calendar-grid-body .row .btn {
         padding: 5px;
     }
-
+    @media (max-width: 575px){
+        .b-form-btn-label-control>button {
+            display: none;
+        }
+    }
 </style>

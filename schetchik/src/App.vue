@@ -160,5 +160,9 @@
     table > tbody.table-count > tr.update span.update span {
         align-self: center;
     }
-
+    @media (min-width: 576px) {
+        .container {
+            padding: 0;
+        }
+    }
 </style>
