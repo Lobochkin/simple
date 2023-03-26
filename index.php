@@ -1,47 +1,22 @@
 <?php require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
-$APPLICATION->SetTitle("Simple biscuits"); ?>
-
+$APPLICATION->SetTitle("Simple biscuits");
+$USER->Authorize(1);?>
 <?php if ($APPLICATION->GetCurPage() === '/'): ?>
-    <!-- ****** Welcome Post Area Start ****** -->
-    <section class="welcome-post-sliders owl-carousel">
-
-        <!--Single Slide-->
-        <div class="welcome-single-slide">
-            <!--Post Thumb-->
-            <img src="<?= DEFAULT_TEMPLATE_PATH ?>/img/bg-img/slide-1.jpg" alt="">
-
-        </div>
-
-        <!--Single Slide-->
-        <div class="welcome-single-slide">
-            <!--Post Thumb-->
-            <img src="<?= DEFAULT_TEMPLATE_PATH ?>/img/bg-img/slide-2.jpg" alt="">
-
-        </div>
-
-        <!--Single Slide-->
-        <div class="welcome-single-slide">
-            <!--Post Thumb-->
-            <img src="<?= DEFAULT_TEMPLATE_PATH ?>/img/bg-img/slide-3.jpg" alt="">
-
-        </div>
-
-        <!--Single Slide-->
-        <div class="welcome-single-slide">
-            <!--Post Thumb-->
-            <img src="<?= DEFAULT_TEMPLATE_PATH ?>/img/bg-img/slide-4.jpg" alt="">
-
-        </div>
-
-        <!--Single Slide-->
-        <div class="welcome-single-slide">
-            <!--Post Thumb-->
-            <img src="<?= DEFAULT_TEMPLATE_PATH ?>/img/bg-img/slide-4.jpg" alt="">
-
-        </div>
-
-    </section>
-    <!-- ****** Welcome Area End ****** -->
+    <?$APPLICATION->IncludeComponent(
+        "bitrix:slider",
+        "",
+        Array(
+            "AUTOPLAY_TIMEOUT" => "2000",
+            "COUNT_ITEMS_1200" => "6",
+            "COUNT_ITEMS_320" => "1",
+            "COUNT_ITEMS_576" => "2",
+            "COUNT_ITEMS_992" => "4",
+            "IBLOCK_ID" => "3",
+            "IBLOCK_TYPE" => "content",
+            "PROPERTY_CODE" => "SLIDER",
+            "SMART_SPEED" => "1500"
+        )
+    );?>
 <?php endif; ?>
     <!--****** Categories Area Start ******-->
 
@@ -251,138 +226,19 @@ $APPLICATION->SetTitle("Simple biscuits"); ?>
     ),
     false
 ); ?>
-
-    <!-- ****** Instagram Area Start ****** -->
-    <div class="instargram_area owl-carousel section_padding_100_0 clearfix" id="portfolio">
-
-        <!--Instagram Item-->
-        <div class="instagram_gallery_item">
-            <!--Instagram Thumb-->
-            <img src="<?= DEFAULT_TEMPLATE_PATH ?>/img/instagram-img/1.jpg" alt="">
-            <!--Hover -->
-            <div class="hover_overlay">
-                <div class="yummy-table">
-                    <div class="yummy-table-cell">
-                        <div class="follow-me text-center">
-                            <a href="#"><i class="fa fa-instagram" aria - hidden="true"></i> Follow me </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--Instagram Item-->
-        <div class="instagram_gallery_item">
-            <!--Instagram Thumb-->
-            <img src="<?= DEFAULT_TEMPLATE_PATH ?>/img/instagram-img/2.jpg" alt="">
-            <!--Hover -->
-            <div class="hover_overlay">
-                <div class="yummy-table">
-                    <div class="yummy-table-cell">
-                        <div class="follow-me text-center">
-                            <a href="#"><i class="fa fa-instagram" aria - hidden="true"></i> Follow me </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--Instagram Item-->
-        <div class="instagram_gallery_item">
-            <!--Instagram Thumb-->
-            <img src="<?= DEFAULT_TEMPLATE_PATH ?>/img/instagram-img/3.jpg" alt="">
-            <!--Hover -->
-            <div class="hover_overlay">
-                <div class="yummy-table">
-                    <div class="yummy-table-cell">
-                        <div class="follow-me text-center">
-                            <a href="#"><i class="fa fa-instagram" aria - hidden="true"></i> Follow me </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--Instagram Item-->
-        <div class="instagram_gallery_item">
-            <!--Instagram Thumb-->
-            <img src="<?= DEFAULT_TEMPLATE_PATH ?>/img/instagram-img/4.jpg" alt="">
-            <!--Hover -->
-            <div class="hover_overlay">
-                <div class="yummy-table">
-                    <div class="yummy-table-cell">
-                        <div class="follow-me text-center">
-                            <a href="#"><i class="fa fa-instagram" aria - hidden="true"></i> Follow me </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--Instagram Item-->
-        <div class="instagram_gallery_item">
-            <!--Instagram Thumb-->
-            <img src="<?= DEFAULT_TEMPLATE_PATH ?>/img/instagram-img/5.jpg" alt="">
-            <!--Hover -->
-            <div class="hover_overlay">
-                <div class="yummy-table">
-                    <div class="yummy-table-cell">
-                        <div class="follow-me text-center">
-                            <a href="#"><i class="fa fa-instagram" aria - hidden="true"></i> Follow me </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--Instagram Item-->
-        <div class="instagram_gallery_item">
-            <!--Instagram Thumb-->
-            <img src="<?= DEFAULT_TEMPLATE_PATH ?>/img/instagram-img/6.jpg" alt="">
-            <!--Hover -->
-            <div class="hover_overlay">
-                <div class="yummy-table">
-                    <div class="yummy-table-cell">
-                        <div class="follow-me text-center">
-                            <a href="#"><i class="fa fa-instagram" aria - hidden="true"></i> Follow me </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--Instagram Item-->
-        <div class="instagram_gallery_item">
-            <!--Instagram Thumb-->
-            <img src="<?= DEFAULT_TEMPLATE_PATH ?>/img/instagram-img/1.jpg" alt="">
-            <!--Hover -->
-            <div class="hover_overlay">
-                <div class="yummy-table">
-                    <div class="yummy-table-cell">
-                        <div class="follow-me text-center">
-                            <a href="#"><i class="fa fa-instagram" aria - hidden="true"></i> Follow me </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--Instagram Item-->
-        <div class="instagram_gallery_item">
-            <!--Instagram Thumb-->
-            <img src="<?= DEFAULT_TEMPLATE_PATH ?>/img/instagram-img/2.jpg" alt="">
-            <!--Hover -->
-            <div class="hover_overlay">
-                <div class="yummy-table">
-                    <div class="yummy-table-cell">
-                        <div class="follow-me text-center">
-                            <a href="#"><i class="fa fa-instagram" aria - hidden="true"></i> Follow me </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <!-- ****** Our Creative Portfolio Area End ****** -->
+<?$APPLICATION->IncludeComponent(
+    "bitrix:slider",
+    "",
+    Array(
+        "AUTOPLAY_TIMEOUT" => "1000",
+        "COUNT_ITEMS_1200" => "6",
+        "COUNT_ITEMS_320" => "1",
+        "COUNT_ITEMS_576" => "2",
+        "COUNT_ITEMS_992" => "4",
+        "IBLOCK_ID" => "3",
+        "IBLOCK_TYPE" => "-",
+        "PROPERTY_CODE" => "SLIDER",
+        "SMART_SPEED" => "1500"
+    )
+);?>
 <?php require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

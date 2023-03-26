@@ -17,21 +17,36 @@ $APPLICATION->SetPageProperty("title", "Simple_biscuits");
     <?php Asset::getInstance()->addString('<meta name="viewport" content="width=device-width, initial-scale=1">'); ?>
     <?php Asset::getInstance()->addCss(SIMPLE_TEMPLATE_PATH . '/style.css'); ?>
     <?php Asset::getInstance()->addCss(SIMPLE_TEMPLATE_PATH . '/css/responsive/responsive.css'); ?>
-    <script src="<?= SITE_TEMPLATE_PATH . '/js/axios.min.js' ?>"></script>
+
+    <?php Asset::getInstance()->addJs(SIMPLE_TEMPLATE_PATH . '/js/axios.min.js'); ?>
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="<?=SITE_TEMPLATE_PATH?>/favicon.ico" />
+    <!-- Jquery-2.2.4 js -->
+    <?php Asset::getInstance()->addJs(SIMPLE_TEMPLATE_PATH . '/js/jquery/jquery-2.2.4.min.js'); ?>
 
     <!-- Add mousewheel plugin (this is optional) -->
-    <script type="text/javascript" src="<?=SIMPLE_TEMPLATE_PATH?>/fancybox/lib/jquery.mousewheel.pack.js"></script>
+
+    <?php Asset::getInstance()->addJs(SIMPLE_TEMPLATE_PATH . '/fancybox/lib/jquery.mousewheel.pack.js'); ?>
     <!-- Add fancyBox -->
     <?php Asset::getInstance()->addCss(SIMPLE_TEMPLATE_PATH . '/fancybox/source/jquery.fancybox.css?v=2.1.7'); ?>
-    <script type="text/javascript" src="<?=SIMPLE_TEMPLATE_PATH?>/fancybox/source/jquery.fancybox.pack.js?v=2.1.7"></script>
+    <?php Asset::getInstance()->addJs(SIMPLE_TEMPLATE_PATH . '/fancybox/source/jquery.fancybox.pack.js?v=2.1.7'); ?>
     <!-- Optionally add helpers - button, thumbnail and/or media -->
     <?php Asset::getInstance()->addCss(SIMPLE_TEMPLATE_PATH . '/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5'); ?>
-    <script type="text/javascript" src="<?=SIMPLE_TEMPLATE_PATH?>/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
-    <script type="text/javascript" src="<?=SIMPLE_TEMPLATE_PATH?>/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+    <?php Asset::getInstance()->addJs(SIMPLE_TEMPLATE_PATH . '/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5'); ?>
+    <?php Asset::getInstance()->addJs(SIMPLE_TEMPLATE_PATH . '/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6'); ?>
     <?php Asset::getInstance()->addCss(SIMPLE_TEMPLATE_PATH . '/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7'); ?>
-    <script type="text/javascript" src="<?=SIMPLE_TEMPLATE_PATH?>/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+    <?php Asset::getInstance()->addJs(SIMPLE_TEMPLATE_PATH . '/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7'); ?>
+    <!-- Popper js -->
+    <?php Asset::getInstance()->addJs(SIMPLE_TEMPLATE_PATH . '/js/bootstrap/popper.min.js'); ?>
+    <!-- Bootstrap-4 js -->
+    <?php Asset::getInstance()->addJs(SIMPLE_TEMPLATE_PATH . '/js/bootstrap/bootstrap.min.js'); ?>
+    <!-- All Plugins JS -->
+    <?php Asset::getInstance()->addJs(SIMPLE_TEMPLATE_PATH . '/js/others/plugins.js'); ?>
+    <!-- Active JS -->
+
+<!--    <script src="--><?//=SIMPLE_TEMPLATE_PATH?><!--/js/active.js"></script>-->
+
 </head>
 
 
@@ -50,6 +65,7 @@ $APPLICATION->SetPageProperty("title", "Simple_biscuits");
                 <!--  Top Social bar start -->
                 <div class="top_social_bar">
                     <a href="https://www.instagram.com/simple_biscuits/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=79151365506" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
                 </div>
             </div>
             <!--  Login Register Area -->
@@ -132,20 +148,62 @@ $APPLICATION->SetPageProperty("title", "Simple_biscuits");
 );?>
 <? endif;?>
 <script>
-    $(document).ready(function() {
-        $(".fancybox-thumb").fancybox({
-            prevEffect	: 'none',
-            nextEffect	: 'none',
-            helpers	: {
-                title	: {
-                    type: 'outside'
-                },
-                thumbs	: {
-                    width	: 50,
-                    height	: 50
-                }
-            }
+    (function ($) {
+        'use strict';
+        // :: 4.0 ScrollUp Active JS
+        if ($.fn.scrollUp) {
+            $.scrollUp({
+                scrollSpeed: 1500,
+                scrollText: '<i class="fa fa-arrow-up" aria-hidden="true"></i>'
+            });
+        }
+
+        // // :: 5.0 CounterUp Active JS
+        // if ($.fn.counterUp) {
+        //     $('.counter').counterUp({
+        //         delay: 10,
+        //         time: 2000
+        //     });
+        // }
+
+        // :: 6.0 PreventDefault a Click
+        $("a[href='#']").on('click', function ($) {
+            $.preventDefault();
         });
-    });
+
+        // // :: 7.0 Search Form Active Code
+        // $(".searchBtn").on('click', function () {
+        //     $(".search-hidden-form").toggleClass("search-form-open");
+        // });
+
+        // :: 8.0 Search Form Active Code
+        // $("#pattern-switcher").on('click', function () {
+        //     $("body").toggleClass("bg-pattern");
+        // });
+        // $("#patter-close").on('click', function () {
+        //     $(this).hide("slow");
+        //     $("#pattern-switcher").addClass("pattern-remove");
+        // });
+
+        // :: 9.0 wow Active Code анимация появления елементов при прокрутке
+        if ($.fn.init) {
+            new WOW().init();
+        }
+
+        // :: 10.0 matchHeight Active JS вырвнивает блоки item по высоте
+        // if ($.fn.matchHeight) {
+        //     $('.item').matchHeight();
+        // }
+
+        var $window = $(window);
+
+        // :: 11.0 Preloader active code
+        $window.on('load', function () {
+            $('#preloader').fadeOut('slow', function () {
+                $(this).remove();
+            });
+        });
+
+    })(jQuery);
 </script>
 

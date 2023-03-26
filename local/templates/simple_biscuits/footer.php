@@ -9,6 +9,7 @@ use Bitrix\Main\Page\Asset;
                 <div class="footer-social-area d-flex">
                     <div class="single-icon">
                         <a href="https://www.instagram.com/simple_biscuits/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="https://api.whatsapp.com/send?phone=79151365506" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
@@ -23,14 +24,14 @@ use Bitrix\Main\Page\Asset;
         <div class="row">
             <div class="col-12">
                 <nav class="navbar navbar-expand-lg">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#yummyfood-nav"
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#yummyfood-nav-footer"
                             aria-controls="yummyfood-nav" aria-expanded="false" aria-label="Toggle navigation"><i
                                 class="fa fa-bars" aria-hidden="true"></i> Menu
                     </button>
                     <!-- Menu Area Start -->
                     <?$APPLICATION->IncludeComponent(
                         "bitrix:menu",
-                        "horizontal_menu_first_level",
+                        "horizontal_menu_first_level_footer",
                         Array(
                             "ALLOW_MULTI_SELECT" => "N",
                             "CHILD_MENU_TYPE" => "left",
@@ -61,18 +62,7 @@ use Bitrix\Main\Page\Asset;
         </div>
     </div>
 </footer>
-<!-- Jquery-2.2.4 js -->
-<?php Asset::getInstance()->addJs(SIMPLE_TEMPLATE_PATH . '/js/jquery/jquery-2.2.4.min.js'); ?>
-<!-- Popper js -->
-<?php Asset::getInstance()->addJs(SIMPLE_TEMPLATE_PATH . '/js/bootstrap/popper.min.js'); ?>
-<!-- Bootstrap-4 js -->
-<?php Asset::getInstance()->addJs(SIMPLE_TEMPLATE_PATH . '/js/bootstrap/bootstrap.min.js'); ?>
-<!-- All Plugins JS -->
-<?php Asset::getInstance()->addJs(SIMPLE_TEMPLATE_PATH . '/js/others/plugins.js'); ?>
-<!-- Active JS -->
-<script src="<?=SIMPLE_TEMPLATE_PATH?>/js/active.js"></script>
 
-<?php Asset::getInstance()->addJs(SIMPLE_TEMPLATE_PATH . '/js/vue.js'); ?>
 </body>
 
 </html>

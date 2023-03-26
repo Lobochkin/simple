@@ -1,4 +1,6 @@
-<? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php"); ?>
+<?
+
+require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php"); ?>
 <?php
 
 /*Bitrix\Main\Page\Asset::getInstance()->addString("<link href=\"/schetchik/css/style.css\" type=\"text/css\" rel=\"stylesheet\">");*/

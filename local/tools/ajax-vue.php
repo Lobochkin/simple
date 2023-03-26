@@ -45,7 +45,7 @@ switch ($request->get('action')) {
         if ($strCount = $request->get('price')){
             $price = $db::getRow("SELECT * FROM price ORDER BY id DESC LIMIT " . $strCount );
 
-            $price[] = $USER->IsAdmin();
+//            $price[] = $USER->IsAdmin();
             echo json_encode($price);
             die();
         }

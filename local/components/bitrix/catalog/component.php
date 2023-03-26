@@ -167,6 +167,6 @@ else
 		"ALIASES" => $arVariableAliases
 	);
 }
-AddMessage2Log($componentPage);
+
 
 $this->IncludeComponentTemplate($componentPage);

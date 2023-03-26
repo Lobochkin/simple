@@ -124,6 +124,11 @@ p {
     padding-bottom: 80px;
 }
 
+.section_padding_20 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
 img {
     max-width: 100%;
 }
@@ -207,9 +212,10 @@ ol {
 }
 
 #scrollUp {
+    border: 1px solid saddlebrown;
     bottom: 55px;
     font-size: 14px;
-    right: 50%;
+    right: 30px;
     width: 30px;
     background-color: #fc6c3f;
     color: #fff;
@@ -695,7 +701,6 @@ li {
 .single-post p {
     color: #51545f;
 }
-
 .single-post .read-more {
     font-size: 12px;
     color: #b5aeba;
@@ -1170,7 +1175,7 @@ li {
 
 .contact-btn {
     margin-top: 50px;
-    width: 160px;
+    /*width: 160px;*/
     height: 40px;
     font-size: 12px;
     text-transform: uppercase;
@@ -1273,15 +1278,22 @@ li {
     position: relative;
     z-index: 1;
     color: #51545f;
-    margin-bottom: 15px;
-    padding-left: 30px;
+    margin-bottom: 0;
+    padding-left: 20px;
+    font-size: 16px;
+    line-height: 18px;
+}
+@media (max-width: 992px) {
+    .single_blog_area ul li {
+        padding-left: 10px;
+    }
 }
 
 .single_blog_area ul li:before {
     position: absolute;
     content: '\f111';
     left: 0;
-    top: 5px;
+    top: 1px;
     font-family: 'FontAwesome';
     font-size: 8px;
     color: #fc6c3f;
@@ -1510,4 +1522,15 @@ li {
         padding-bottom: 0;
         overflow: visible;
     }
+}
+.single-contact-info {
+    margin: 10px;
+}
+.row.row-catalog {
+    margin: 0;
+    padding: 0;
+}
+.justify-content-center > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
 }

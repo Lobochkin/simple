@@ -103,7 +103,7 @@ a.fn.owlCarousel.Constructor.Plugins.Animate=e}(window.Zepto||window.jQuery,wind
         scrollTitle: !1,
         scrollImg: !1,
         activeOverlay: !1,
-        zIndex: 2147483647
+        zIndex: 15
     }, l.fn.scrollUp.destroy = function (r) {
         l.removeData(e.body, "scrollUp"), l("#" + l.fn.scrollUp.settings.scrollName).remove(), l("#" + l.fn.scrollUp.settings.scrollName + "-active").remove(), l.fn.jquery.split(".")[1] >= 7 ? l(o).off("scroll", r) : l(o).unbind("scroll", r)
     }, l.scrollUp = l.fn.scrollUp
